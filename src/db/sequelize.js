@@ -11,7 +11,7 @@ const axios = require('axios')
 
 let sequelize;
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'development') {
     sequelize = new Sequelize('dofus', 'root', '',
         {
             host: 'localhost',
@@ -22,15 +22,15 @@ if (process.env.NODE_ENV === 'production') {
             logging: false
         })
 } else {
-    sequelize = new Sequelize('dofus', 'root', '',
-        {
-            host: 'localhost',
-            dialect: 'mariadb',
-            dialectOptions: {
-                timezone: '+02:00'
-            },
-            logging: false
-        })
+    // sequelize = new Sequelize('dofus', 'root', '',
+    //     {
+    //         host: 'localhost',
+    //         dialect: 'mariadb',
+    //         dialectOptions: {
+    //             timezone: '+02:00'
+    //         },
+    //         logging: false
+    //     })
 }
 
 sequelize.authenticate()
