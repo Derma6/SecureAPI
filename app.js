@@ -3,6 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const sequelize = require('./src/db/sequelize.js');
+const cors = require('cors')
 
 
 const app = express()
