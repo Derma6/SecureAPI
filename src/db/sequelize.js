@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 sequelize.authenticate()
-    .then(_ => console.log('La connexion à la base de données a bien été établis.'))
+    .then(() => console.log('La connexion à la base de données a bien été établis.'))
     .catch(error => console.error('Impossible de se connecter à la base de données.'))
 
 const Personnage = personnageModel(sequelize, DataTypes)
@@ -42,7 +42,7 @@ const User = UserModel(sequelize, DataTypes)
 
 const initDb = () => {
     return sequelize.sync()
-        .then(_ => {
+        .then(() => {
             console.log('La base de données "dofus" a bien été synchronisée.')
 
         //     axios.get(`http://localhost:3001/dofus/classes`)

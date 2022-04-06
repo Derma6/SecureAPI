@@ -10,7 +10,7 @@ module.exports = (app) => {
                 return Personnage.destroy({
                     where: { id: personnage.id }
                 })
-            .then(_ => {
+            .then(() => {
                 const message = `La classe ${personnageDeleted.name} a bien été supprimée.`
                 res.json({message, data: personnageDeleted})
                 })
