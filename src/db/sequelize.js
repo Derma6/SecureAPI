@@ -6,7 +6,6 @@ const bcrypt = require('bcrypt')
 
 const axios = require('axios')
 
-
 /*-----------------------------ORM SEQUELIZE-----------------------------*/
 
 let sequelize;
