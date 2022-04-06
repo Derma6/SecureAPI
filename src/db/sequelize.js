@@ -11,17 +11,7 @@ const axios = require('axios')
 
 let sequelize;
 
-// if (process.env.NODE_ENV === 'production') {
-//     sequelize = new Sequelize('dofus', 'root', '',
-//         {
-//             host: 'localhost',
-//             dialect: 'mariadb',
-//             dialectOptions: {
-//                 timezone: '+02:00'
-//             },
-//             logging: false
-//         })
-// } else {
+if (process.env.NODE_ENV === 'production') {
     sequelize = new Sequelize('dofus', 'root', '',
         {
             host: 'localhost',
@@ -31,7 +21,17 @@ let sequelize;
             },
             logging: false
         })
-// }
+} else {
+    sequelize = new Sequelize('dofus', 'root', '',
+        {
+            host: 'localhost',
+            dialect: 'mariadb',
+            dialectOptions: {
+                timezone: '+02:00'
+            },
+            logging: false
+        })
+}
 
 sequelize.authenticate()
     .then(_ => console.log('La connexion à la base de données a bien été établis.'))
@@ -41,7 +41,7 @@ const Personnage = personnageModel(sequelize, DataTypes)
 const User = UserModel(sequelize, DataTypes)
 
 const initDb = () => {
-    return sequelize.sync({force: false})
+    return sequelize.sync()
         .then(_ => {
             console.log('La base de données "dofus" a bien été synchronisée.')
 
