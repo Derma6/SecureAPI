@@ -19,9 +19,9 @@ const sequelize = new Sequelize('dofus', 'root', '',
 })
 
 
-// sequelize.authenticate()
-//     .then(() => console.log('La connexion à la base de données a bien été établis.'))
-//     .catch(error => console.error('Impossible de se connecter à la base de données.'))
+sequelize.authenticate()
+    .then(() => console.log('La connexion à la base de données a bien été établis.'))
+    .catch(error => console.error('Impossible de se connecter à la base de données.'))
 
 const Personnage = personnageModel(sequelize, DataTypes)
 const User = UserModel(sequelize, DataTypes)
