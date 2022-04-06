@@ -2,35 +2,25 @@ const { Sequelize, DataTypes } = require('sequelize');
 const personnageModel = require('../models/personnage')
 const UserModel = require('../models/user')
 
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 
-const axios = require('axios')
+// const axios = require('axios')
 
 /*-----------------------------ORM SEQUELIZE-----------------------------*/
 
-let sequelize;
 
-if (process.env.NODE_ENV === 'development') {
-    sequelize = new Sequelize('dofus', 'root', '',
-        {
-            host: 'localhost',
-            dialect: 'mariadb',
-            dialectOptions: {
-                timezone: '+02:00'
-            },
-            logging: false
-        })
-} else {
-    // sequelize = new Sequelize('dofus', 'root', '',
-    //     {
-    //         host: 'localhost',
-    //         dialect: 'mariadb',
-    //         dialectOptions: {
-    //             timezone: '+02:00'
-    //         },
-    //         logging: false
-    //     })
-}
+
+
+const sequelize = new Sequelize('dofus', 'root', '',
+    {
+        host: 'localhost',
+        dialect: 'mariadb',
+        dialectOptions: {
+            timezone: '+02:00'
+        },
+        logging: false
+})
+
 
 sequelize.authenticate()
     .then(() => console.log('La connexion à la base de données a bien été établis.'))
