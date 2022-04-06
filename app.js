@@ -8,7 +8,9 @@ const sequelize = require('./src/db/sequelize.js');
 const app = express()
 const port = process.env.PORT || 3000;
 
-app.use(bodyParser.json())
+app
+    .use(bodyParser.json())
+    .use(cors())
 
 sequelize.initDb()
 
