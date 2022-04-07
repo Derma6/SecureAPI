@@ -10,7 +10,7 @@ const UserModel = require('../models/user')
 let sequelize
 
 if (process.env.NODE_ENV === "production") {
-    sequelize = new Sequelize('	fg3xnqfo0f7rxclz', 'rrfim0ca74eup733', 'zjchqnlopivsb22r',
+    sequelize = new Sequelize('fg3xnqfo0f7rxclz', 'rrfim0ca74eup733', 'zjchqnlopivsb22r',
         {
             host: 'f80b6byii2vwv8cx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
             dialect: 'mariadb',
