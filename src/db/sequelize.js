@@ -8,15 +8,29 @@ const UserModel = require('../models/user')
 
 /*-----------------------------ORM SEQUELIZE-----------------------------*/
 
-const sequelize = new Sequelize('dofus', 'root', '',
-    {
-        host: 'localhost',
-        dialect: 'mariadb',
-        dialectOptions: {
-            timezone: '+02:00'
-        },
-        logging: false
-})
+let sequelize
+
+if (process.env.NODE_ENV === production) {
+    sequelize = new Sequelize('	fg3xnqfo0f7rxclz', 'rrfim0ca74eup733', 'zjchqnlopivsb22r',
+        {
+            host: 'f80b6byii2vwv8cx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
+            dialect: 'mariadb',
+            dialectOptions: {
+                timezone: '+02:00'
+            },
+            logging: true
+    })
+} else {
+    sequelize = new Sequelize('dofus', 'root', '',
+        {
+            host: 'localhost',
+            dialect: 'mariadb',
+            dialectOptions: {
+                timezone: '+02:00'
+            },
+            logging: false
+    })
+}
 
 
 sequelize.authenticate()
