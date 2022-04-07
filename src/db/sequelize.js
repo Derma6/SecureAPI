@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 const personnageModel = require('../models/personnage')
 const UserModel = require('../models/user')
 
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 // const axios = require('axios')
 
 /*-----------------------------ORM SEQUELIZE-----------------------------*/
@@ -55,12 +55,12 @@ const initDb = () => {
 
         //   })
 
-        bcrypt.hash('pikachu', 10)
-            .then(hash => {User.create({ username: 'pikachu', password: hash})
-            .then(user => console.log(user.toJSON()))
+        // bcrypt.hash('pikachu', 10)
+        //     .then(hash => {User.create({ username: 'pikachu', password: hash})
+        //     .then(user => console.log(user.toJSON()))
 
-            console.log('La base de donnée a bien été initialisée !');
-        })
+        //     console.log('La base de donnée a bien été initialisée !');
+        // })
     })
 }
     
