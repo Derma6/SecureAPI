@@ -47,10 +47,10 @@ const initDb = () => {
         //     axios.get(`http://localhost:3001/dofus/classes`)
         //     .then((response) => {
         //     response.data.map((element) => {
-                Personnage.create({
-                        "name": "first",
-                        "description": "first",
-                    })
+                // Personnage.create({
+                //         "name": "first",
+                //         "description": "first",
+                //     })
         //     }); 
 
         //   })
