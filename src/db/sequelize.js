@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 const personnageModel = require('../models/personnage')
 const UserModel = require('../models/user')
 
-// const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt')
 // const axios = require('axios')
 
 /*-----------------------------ORM SEQUELIZE-----------------------------*/
